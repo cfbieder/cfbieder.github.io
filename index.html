@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS498 - Better Life?</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/scene.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="navbar" id="navbar">
+            <h1>CS498 - Better Life</h1>      
+            <p>A look into what factors contribute to a 'Better Life' based upon 2017 OECD statistics</p>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                        <button onclick="window.location.href='about.html'" class="btn btn-info navbar-btn">About the Visualization</button>
+                        <button onclick="window.location.href='factors.html'" class="btn btn-success navbar-btn" glyphicon glyphicon-chevron-right>Factors
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </button>
+                </div>
+              </nav> 
+        </div>   
+        <div  id="scene_block" class="container">
+            <div class = "row"  style="height : 500px" >
+                <div class="row col-md-4" >
+                    <h1 id="title"></h1>
+                </div>
+                <div class="col-md-8">
+                    <h2 id="subtitle"></h3>
+                    <p>Overview of the quality of life
+                        rating for the countries tracked in teh OECD survey.
+                    </p>
+                    <p>
+                        Hover over a Bar or Info Oval to see more
+                    </p>
+                </div>
+                <div class="scene"></div>
+            </div>
+
+
+            
+
+        </div>
+
+        <div class="footer row">
+                <div col-md-4>
+                    <h3>Sources</h3>
+                    <a href="https://www.kaggle.com/jej13b/oecd-better-life-index">Dateset source : Kaggle</a><br>
+                </div>
+                <div col-md-4></div>
+                <div col-md-4></div>
+        </div>
+    </div>      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/data.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/scene_controls.js"></script>
+    
+    <script>
+        $(function() {
+            console.log("Page 1 loaded" );
+            setup_index()
+        });
+    </script>
+  </body>
+</html>

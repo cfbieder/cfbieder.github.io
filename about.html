@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS498 - Better Life?</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/scene.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="navbar" id="navbar">
+            <h1>CS498 - Better Life</h1>      
+            <p>A look into what factors contribute to a 'Better Life' based upon 2017 OECD statistics</p>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                        <button onclick="window.location.href='index.html'" class="btn btn-success navbar-btn" glyphicon glyphicon-chevron-right>Data Overview
+                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        </button>
+                </div>
+              </nav> 
+        </div>   
+        <div  id="scene_block" class="container">
+            <div class = "row" >
+                <h1>Objective</h1>
+                    <p>This visualization was created for the CS498 Data Visualizaiton Course with the objective of creating a visualization based upon 2017 OECD statistics.  The dataset was source from:</p>
+                    <a href="https://www.kaggle.com/jej13b/oecd-better-life-index">Dateset source : Kaggle</a>
+                <h1>Structure</h1>
+                    <p>The structure of the project follow that of an ineractive slide show</p>
+                    <p>The flow of the slides is driven by the author with navigation arrows indicating the order to proceed with</p>
+                    <p>Thereafter each page allows for the user to interact with the data to see different representation of it</p>
+                <h1>Scene Utilizations</h1>
+                    <p>Each slide of the scene utilizes a consitant format and colloring scheme.  Additionally the navigation highligted
+                        with arrows are similiar on each page to ensure the user can easily get confortale with navigation through the deck.
+                    </p>
+                    <P>On each slide the ability to hover over items to obtain more insight is consitant as is the format and content of the 
+                        data selection drop down bar on the 2nd and 3rd slide
+                    </P>
+                <h1>Use of Annotations</h1>
+                    <p></p>
+                <h1>Use of Parameters</h1>
+                    <p></p>
+                <h1>Use of Triggers</h1>
+                    <p></p>
+            </div>
+
+
+            
+
+        </div>
+
+        <div class="footer row">
+                <div col-md-4>
+                    <h3>Sources</h3>
+                    <a href="https://www.kaggle.com/jej13b/oecd-better-life-index">Dateset source : Kaggle</a><br>
+                </div>
+                <div col-md-4></div>
+                <div col-md-4></div>
+        </div>
+    </div>      
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/data.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="js/scene_controls.js"></script>
+    
+  </body>
+</html>

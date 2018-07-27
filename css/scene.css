@@ -1,0 +1,68 @@
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 80px;					
+    height: 35px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+div.infotip {	
+    position: absolute;			
+    text-align: center;			
+    width: 200px;					
+    height: 50px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: rgb(182, 240, 168);	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #EB1717;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.footer {
+
+    bottom: 0;
+
+    background-color: #F8F4F4;
+    color: #0E0101;
+    text-align: center;
+    font-size:x-small;
+    padding: 5px 16px;
+ }
+
+ .navbar {
+        /* The image used */
+        background-image:  url("pic.jpg");
+        color : wheat;
+        height: 50 px;
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+}
+
+.axis {
+	font: 15px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #D4D8DA;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
