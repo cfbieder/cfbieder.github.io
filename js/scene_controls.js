@@ -1,5 +1,6 @@
 
 var activeScene = 0;
+var activePage = 1;
 
 //var btnContainer = document.getElementById("navigation");
 //var btns = btnContainer.getElementsByClassName("btn");
@@ -80,17 +81,14 @@ function onchange_bar() {
 
 
 
-function updateAnnotations(svg,scene){
+function updateAnnotations(svg,scene,x,y){
 
 
-    var elem = svg.selectAll(".cir")
-    elem.transition()		
-        .duration(500)		
-        .style("opacity",0);
+    elem = svg.selectAll(".cir").remove();
 
     infoPoints = []
     annotations.forEach(function (element) {
-        if (element.scene == scene) {
+        if (element.scene == scene & element.page == activePage) {
             infoPoints.push(element);
         }
     })
@@ -104,7 +102,7 @@ function updateAnnotations(svg,scene){
     var elemEnter = elem.enter()
         .append("g")
         .attr("class", "cir")
-        .attr("transform", function(d){return "translate("+x(d.px)+","+d.py+")"})
+        .attr("transform", function(d){return "translate("+x(d.px)+","+y(d.py)+")"})
         .style("opacity",1)
         .on("mouseover", function(d) {
             divInfo.transition()		
@@ -138,6 +136,7 @@ function updateAnnotations(svg,scene){
 
 
 transitionScatterChart = function() {
+    console.log('Transition');
     data = [];
     
     var onlyValuesY = scene.map(function(obj){ return obj[activeScene+1]; });
@@ -187,21 +186,11 @@ transitionScatterChart = function() {
         .attr('fill', function(d,i){return d.fillColor})         
         .attr("cx", function(d) { return x_scatter(d.x); })
         .attr("cy", function(d) { return y(d.y); })
-        .on("mouseover", function(d) {
-            div.transition()		
-                .duration(200)		
-                .style("opacity", .9);
-            div.html("<strong>"+d.country+"</strong>")
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY) + "px")
-                .style("display", "inline-block")
-        })
-        .on("mouseout", function(d) {		
-            div.transition()		
-                .duration(500)		
-                .style("opacity", 0)	
-        });
+
     bars.exit().remove();
+
+
+    updateAnnotations(svg_scatter,activeScene,x_scatter,y);
 
 }
 
@@ -281,6 +270,8 @@ updateScatterChart = function() {
     bars.exit().remove();
 
     dropData = createDropDownData();
+
+    updateAnnotations(svg_scatter,activeScene,x_scatter,y);
      
     var options = select_scatter
     .selectAll('option')
@@ -440,65 +431,19 @@ updateBarChart = function() {
 
 
 function setup_index() {
+    activePage = 1;
     updateBarChart();
 }
 
 function setup_factors() {
+    activePage = 2;
     activeScene = 1;
     updateBarChart();
 }
 
 function setup_corrl() {
+    activePage = 3;
     activeScene = 1;
     updateScatterChart()
 }
 
-  /*
-
-
-              .on("mouseover", function(d) {
-                tooltip2
-                    .html("<strong>"+d.name+":</strong> <span style='color:red'>" + d.index + "</span>")
-                    .style("left", (d3.event.pageX - 50) + "px")
-                    .style("top", (d3.event.pageY - 70) + "px")
-                    .style("display", "inline-block");
-                })
-            .on("mouseout", function(d) {
-                tooltip2.transition()
-                    .style("opacity", 0);
-                });
-
-
-
-                    d3.select('#navigation').selectAll('button').data(scenes).enter()
-        .append('button')
-        .attr('type', 'button')
-        .attr('class', function (d, i) {
-        return "btn btn-primary" + (d.active ? " active" : "");
-        })
-        .attr('id', function (d, i) {
-            return 'btn-number'+d.number;
-        })
-        .text(function (d, i) {
-            return d.number;
-        })
-        .on("click", function(d,i) {
-            activeScene = scenes[i].number
-
-            showBlock();
-            updateChart();
-        })
-        .on("mouseover", function(d,i) {
-        tooltip.style("opacity", 1)
-            .style("left",(d3.event.pageX)+"px")
-            .style("top",(d3.event.pageY)+"px")
-            .html(d.name)
-            .style("display", "inline");
-
-            for (var i = 0; i < btns.length; i++) {
-                  var current = document.getElementsByClassName("btn-primary");
-                  current[0].className = current[0].className.replace(" active", "");
-            };
-        })
-        .on("mouseout", function(d){ tooltip.style("display", "none");});
-*/

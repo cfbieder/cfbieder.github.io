@@ -69,7 +69,13 @@ var series_pallet = [
 
 var annotations = [
     {page : 1, scene : 0,px : 'Finland',py:8,opacity : 1,text:"Countries in the top end of satisfaction ratings, tend to be Nothern European"},
-    {page : 2, scene : 1,px: 'USA' ,py:0,text:"USA appears to represent a significant outlyer"}
+    {page : 1, scene : 0,px : 'Turkey',py:6.5,opacity : 1,text:"Countries in the lower end of satisfaction ratings, tend to be Southern and E. European"},
+    {page : 2, scene : 1,px: 'Germany' ,py:160000,text:"USA appears to represent a significant outlyer"},
+    {page : 2, scene : 2,px: 'Spain' ,py:20,text:"S. Africa, Greece and Spain stand out with higher rates"},
+    {page : 2, scene : 8,px: 'France',py : 20, text : "Homicide rates are generally low with a few clear exceptions namely, Brazil, Russia, Mexico and S. Africa"},
+    {page : 3, scene : 1,px: 6.25,py : 140000, text : "A slight positive correlations appears to exist with this factor"},
+    {page : 3, scene : 2,px: 6.25,py : 18, text : "and here a stronger negative correlations appears to exist with this factor"},
+    {page : 3, scene : 3,px: 6.25,py : 80, text : "A relatively strong positive correlations appears to exist with this factor"}
 ]
 
 var scene = 
