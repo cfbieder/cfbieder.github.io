@@ -241,6 +241,21 @@ updateScatterChart = function() {
         .attr("class","yAxis")
         .call(d3.axisLeft(y));
 
+    svg_scatter.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text(y_axis_label[activePage-1]); 
+    
+    svg_scatter.append("text")             
+        .attr("transform",
+              "translate(" + (width/2) + " ," + 
+                             (height + margin.top + 20) + ")")
+        .style("text-anchor", "middle")
+        .text(x_axis_label[activePage-1]);
+
 
     var bars = svg_scatter.selectAll(".bar")
         .remove()
@@ -386,6 +401,21 @@ updateBarChart = function() {
         .duration(2000);
 
     var f = d3.format(",.2r")
+
+    svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left-30)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "5em")
+        .style("text-anchor", "middle")
+        .text(y_axis_label[activePage-1]); 
+
+    svg.append("text")             
+        .attr("transform",
+              "translate(" + (width/2) + " ," + 
+                             (height + margin.top + 50) + ")")
+        .style("text-anchor", "middle")
+        .text(x_axis_label[activePage-1]);
 
     var bars = svg.selectAll(".bar")
         .remove()

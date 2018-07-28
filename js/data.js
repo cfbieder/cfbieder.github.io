@@ -67,6 +67,18 @@ var series_pallet = [
     ['gray','yellow','green']
 ]
 
+var y_axis_label = [
+    'Satisfaction',
+    'Factor Value',
+    'Factor Value'
+]
+
+var x_axis_label = [
+    'Country',
+    'Country',
+    'Satisfaction'
+]
+
 var annotations = [
     {page : 1, scene : 0,px : 'Finland',py:8,opacity : 1,text:"Countries in the top end of satisfaction ratings, tend to be Nothern European"},
     {page : 1, scene : 0,px : 'Turkey',py:6.5,opacity : 1,text:"Countries in the lower end of satisfaction ratings, tend to be Southern and E. European"},
