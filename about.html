@@ -31,25 +31,51 @@
                     <p>This visualization was created for the CS498 Data Visualizaiton Course with the objective of creating a visualization based upon 2017 OECD statistics.  The dataset was source from:</p>
                     <a href="https://www.kaggle.com/jej13b/oecd-better-life-index">Dateset source : Kaggle</a>
                 <h1>Structure</h1>
-                    <p>The structure of the project follow that of an ineractive slide show</p>
-                    <p>The flow of the slides is driven by the author with navigation arrows indicating the order to proceed with</p>
-                    <p>Thereafter each page allows for the user to interact with the data to see different representation of it</p>
-                    <p>The first slides presents an overview of each country in the survey and thier respective quality of life rating</p>
-                    <p>The second slide highlights factors that were considered in the survey allowing the the user to explore each of these factors</p>
-                    <p>The third slide presents a graphical correlation of these factors to satisfaction, again allowing user interaction to select which factor to explore</p>
+                    <p>The structure of the project follow that of an ineractive slide show.</p>
+                    <p>The flow of the slides is driven by the author with navigation arrows indicating the order to proceed with.</p>
+                    <p>Thereafter each page allows for the user to interact with the data to see different representation of it.</p>
                 <h1>Scene Utilizations</h1>
                     <p>Each slide of the scene utilizes a consitant format and colloring scheme.  Additionally the navigation highligted
-                        with arrows are similiar on each page to ensure the user can easily get confortale with navigation through the deck.
-                    </p>
+                        with arrows are similiar on each page to ensure the user can easily get confortale with navigation through the deck.</p>
                     <P>On each slide the ability to hover over items to obtain more insight is consitant as is the format and content of the 
-                        data selection drop down bar on the 2nd and 3rd slide
-                    </P>
+                        data selection drop down bar on the 2nd and 3rd slide.</P>
+                    <p>The first slides presents an overview of each country in the survey and thier respective quality of life rating.</p>
+                    <p>The second slide highlights factors that were considered in the survey allowing the the user to explore each of these factors.</p>
+                    <p>The third slide presents a graphical correlation of these factors to satisfaction, again allowing user interaction to select
+                            which factor to explore.</p>
+                        <p>Each visualiztion is scaled appropriately utilizing the D3 scale functions</p>
                 <h1>Use of Annotations</h1>
-                    <p></p>
+                    <p>Each slide contains two types of annotations, (1) the ability to hover over a bar or circle to see the info on the data point
+                        and (2) "Info" points highlighed on appropriate slides that when hovered over present more information to the user on observations 
+                        from the data.</p>
+                    <p>The hover over data (e.g. graph or point) annotations are cleared and refreshed each time a new page is loaded or 
+                        the parameter, as discussed below, is changed.  The source of the this annotation is the actual data point stored in a 
+                        JSON array</p>
+                    <p>The "Info" annotations are cleared upon each slide or change in parameter with a new info point arising if appropriate. The 
+                        visualization allows for a JSON array containing the data points for the "Info" annotations.  This JSON array contains data on
+                        which slide, which parameter and location to display the "Info" symbol.  The JSON array also contains info on what data is to be
+                        displayed upon a hover.</p>
+                    <P>Both forms of annotations utilize a similiar template and method for visualization, namely a mouse hover. </P>
                 <h1>Use of Parameters</h1>
+                    <p>The parameters that can be change is on the 2nd and 3rd slide which allows the user to dynamically change teh selected factor and
+                        update the data points appropriately.</p>
+                    <p>The visualization utilizes the D3 filtering function achieve this.</p>
+                    <p>The user is clearly informed in a consitant manner on slide 2 and 3 on the use of the dropdown box to change the parameter.</p>
                     <p></p>
                 <h1>Use of Triggers</h1>
-                    <p></p>
+                    <p>There are two triggers utilized in the visualization (1) page navigation utilizing arrows to direct the user of the sequence of
+                        the slides and (2) triggers to change the factors to explore on the 2nd and 3rd slide.</p>
+                    <p>The navigation trigger utlizes a button with a HTML reference to the next page to load upon click</p>
+                    <p>The trigger to change the factor utilizes D3 to attach a filter function to the dropdown box, whereby when changed
+                        a D3 transition is triggered to present the updated data.</p>
+                    <p>Both triggers are explicitly highlighted to the user with the use of color and shape of the button for navigation and clear
+                        instructions on the use of the trigger for the factor selection.
+                    </p>
+                <h1>Citations</h1>
+                    <a href="https://www.kaggle.com/jej13b/oecd-better-life-index">Dateset source : Kaggle</a>
+                    <a href="https://d3js.org/">D3 Library</a>
+                    <a href="https://jquery.com/">JQuery</a>
+                    <a href="https://getbootstrap.com/">Bootstrap</a>
             </div>
 
 
